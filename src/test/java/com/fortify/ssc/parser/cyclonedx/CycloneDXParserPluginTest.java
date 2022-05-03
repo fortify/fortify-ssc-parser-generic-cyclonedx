@@ -50,7 +50,7 @@ import com.fortify.plugin.api.VulnerabilityHandler;
 import com.fortify.ssc.parser.cyclonedx.CycloneDXParserPlugin;
 import com.fortify.ssc.parser.cyclonedx.parser.ScanParser;
 
-class SARIFParserPluginTest {
+class CycloneDXParserPluginTest {
 	private static final String[] SAMPLE_FILES_2_1_0 = {
 			"EightBall.fpr.sarif",
 			"EightBall.xml.sarif",
@@ -90,7 +90,7 @@ class SARIFParserPluginTest {
 	}
 	
 	private final ScanBuilder scanBuilder = (ScanBuilder) Proxy.newProxyInstance(
-			SARIFParserPluginTest.class.getClassLoader(), 
+			CycloneDXParserPluginTest.class.getClassLoader(), 
 			  new Class[] { ScanBuilder.class }, new InvocationHandler() {
 				
 				@Override
@@ -106,7 +106,7 @@ class SARIFParserPluginTest {
 		public StaticVulnerabilityBuilder startStaticVulnerability(String instanceId) {
 			System.err.println("startStaticVulnerability: "+instanceId);
 			return (StaticVulnerabilityBuilder) Proxy.newProxyInstance(
-					SARIFParserPluginTest.class.getClassLoader(), 
+					CycloneDXParserPluginTest.class.getClassLoader(), 
 					  new Class[] { StaticVulnerabilityBuilder.class }, new InvocationHandler() {
 						
 						@Override
