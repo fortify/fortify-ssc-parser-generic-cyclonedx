@@ -1,0 +1,48 @@
+[
+	[
+		{
+			"type": "template",
+			"title": "Issue Details",
+			"templateId": "TITLEBOX",
+			"items": [
+				{
+					"type": "template",
+					"title": "File",
+					"key": "fullFileName",
+					"templateId": "SIMPLE",
+					"dataType": "string"
+				},
+				{
+					"type": "template",
+					"title": "Category",
+					"key": "customAttributes.categoryAndSubCategory",
+					"templateId": "SIMPLE",
+					"dataType": "string"
+				},
+				{
+					"type": "template",
+					"title": "Priority",
+					"key": "friority",
+					"templateId": "SIMPLE",
+					"dataType": "string"
+				},
+				{
+					"type": "template",
+					"title": "Tool Name",
+					"key": "customAttributes.toolName",
+					"templateId": "SIMPLE",
+					"dataType": "string"
+				}
+			]
+		}
+	],
+	[
+		{
+			"type": "template",
+			"title": "Description",
+			"key": "brief",
+			"templateId": "COLLAPSE",
+			"dataType": "string"
+		}
+	]
+]

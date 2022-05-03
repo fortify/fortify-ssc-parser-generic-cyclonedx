@@ -1,0 +1,59 @@
+plugins {
+  id "io.freefair.lombok" version "6.4.3"
+  id 'com.github.jk1.dependency-license-report' version '2.1'
+  id "org.kordamp.gradle.markdown" version "2.2.0"
+}
+
+group 'com.fortify.ssc.parser.cyclonedx'
+ext.getVersion = {
+	def result = project.findProperty('version');
+	return !result || result=='unspecified' ? new Date().format('0.yyyyMMdd.HHmmss') : result;
+}
+version = ext.getVersion();
+ext.sscParserPluginVersion = project.version
+
+ext {
+	gradleHelpersLocation = "https://raw.githubusercontent.com/fortify-ps/gradle-helpers/1.7"
+}
+
+apply from: "${gradleHelpersLocation}/repo-helper.gradle"
+apply from: "${gradleHelpersLocation}/junit-helper.gradle"
+apply from: "${gradleHelpersLocation}/ssc-parser-plugin-helper.gradle"
+apply from: "${gradleHelpersLocation}/thirdparty-helper.gradle"
+apply from: "${gradleHelpersLocation}/readme2html.gradle"
+
+apply plugin: 'java'
+sourceCompatibility = 1.8
+
+sourceSets {
+    test {
+        resources {
+            srcDir "sampleData"
+        }
+    }
+}
+
+configurations.all {
+    // Don't cache modules that may change (i.e. snapshots)
+	resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+dependencies {
+	implementationExport(group: 'org.mapdb', name: 'mapdb', version: '3.0.8') { transitive = true }
+    implementationExport(group: 'com.fortify.ssc.parser.util', name: 'fortify-ssc-parser-util-json', version:'1.6.1.RELEASE', changing: false) { transitive = true }
+    testImplementation("org.junit.jupiter:junit-jupiter-params:5.8.2")
+}
+
+task dist(type: Zip) {
+	dependsOn 'build', 'readme2html'
+	archiveFileName = "${rootProject.name}-${project.version}.zip"
+	destinationDirectory = file("$buildDir/dist")
+	from("${buildDir}/${libsDirName}") {
+		include "${rootProject.name}-${project.version}.jar"
+	}
+	from "${buildDir}/html"
+	from("${projectDir}") {
+		include "sampleData/**/*"
+		include "LICENSE.TXT"
+	}
+}
