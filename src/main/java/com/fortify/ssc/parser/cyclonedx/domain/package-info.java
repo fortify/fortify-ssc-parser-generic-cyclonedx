@@ -23,8 +23,8 @@
  * IN THE SOFTWARE.
  ******************************************************************************/
 /**
- * This package contains SARIF domain classes. These classes are mostly named
- * after the objects described in the SARIF specification. These classes focus
+ * This package contains CycloneDX domain classes. These classes are mostly named
+ * after the objects described in the CycloneDX specification. These classes focus
  * on data that is actually used by our parser implementation (to optimize size),
  * so may not define all object properties as described in the specification.
  */

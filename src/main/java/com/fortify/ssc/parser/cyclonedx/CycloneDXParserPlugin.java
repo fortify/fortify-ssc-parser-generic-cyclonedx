@@ -14,11 +14,10 @@ import com.fortify.ssc.parser.cyclonedx.parser.ScanParser;
 import com.fortify.ssc.parser.cyclonedx.parser.VulnerabilitiesParser;
 
 /**
- * Main {@link ParserPlugin} implementation for parsing SARIF results; see
- * https://docs.oasis-open.org/sarif/sarif/v2.1.0/cs01/sarif-v2.1.0-cs01.html
- * for the supported SARIF specification. This class simply defines the various 
- * parser plugin SPI methods; actual parsing is done by the appropriate dedicated 
- * parser classes.
+ * Main {@link ParserPlugin} implementation for parsing CycloneDX results; see
+ * https://cyclonedx.org/ for the CycloneDX specification. This class simply defines 
+ * the various parser plugin SPI methods; actual parsing is done by the appropriate 
+ * dedicated parser classes.
  * 
  * @author Ruud Senden
  *
@@ -28,12 +27,12 @@ public class CycloneDXParserPlugin implements ParserPlugin<CustomVulnAttribute> 
 
     @Override
     public void start() throws Exception {
-        LOG.info("SARIF parser plugin is starting");
+        LOG.info("CycloneDX parser plugin is starting");
     }
 
     @Override
     public void stop() throws Exception {
-        LOG.info("SARIF parser plugin is stopping");
+        LOG.info("CycloneDX parser plugin is stopping");
     }
 
     @Override

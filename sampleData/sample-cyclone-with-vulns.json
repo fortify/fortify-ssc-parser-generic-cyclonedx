@@ -1,1 +1,354 @@
-{"bom_format":"CycloneDx","spec_version":"1","version":1,"components":[{"cpe":"cpe:2.3:a:com.fasterxml.jackson.core:jackson-databind:~:~:~:~:~:~:~:~","purl":"pkg:maven\/com.fasterxml.jackson.core\/jackson-databind@~","name":"","version":"","bom-ref":"21402","licenses":[]},{"cpe":"cpe:2.3:a:com.fasterxml.jackson.core:jackson-databind:2.10.0:~:~:~:~:~:~:~","purl":"pkg:maven\/com.fasterxml.jackson.core\/jackson-databind@2.10.0","name":"","version":"2.10.0","bom-ref":"21405","licenses":[]},{"cpe":"cpe:2.3:a:seq:seq:0.3.5:~:~:~:~:~:~:~","purl":"pkg:maven\/seq\/seq@0.3.5","name":"","version":"0.3.5","bom-ref":"20722","licenses":[]},{"cpe":"cpe:2.3:a:brace-expansion:brace-expansion:1.0.11:~:~:~:~:~:~:~","purl":"pkg:maven\/brace-expansion\/brace-expansion@1.0.11","name":"","version":"1.0.11","bom-ref":"21633","licenses":[]},{"cpe":"cpe:2.3:a:brace-expansion:brace-expansion:1.1.11:~:~:~:~:~:~:~","purl":"pkg:maven\/brace-expansion\/brace-expansion@1.1.11","name":"","version":"1.1.11","bom-ref":"21641","licenses":[]},{"cpe":"cpe:2.3:a:brace-expansion:brace-expansion:1.4.3:~:~:~:~:~:~:~","purl":"pkg:maven\/brace-expansion\/brace-expansion@1.4.3","name":"","version":"1.4.3","bom-ref":"21642","licenses":[]},{"cpe":"cpe:2.3:a:brace-expansion:brace-expansion:2.5.0:~:~:~:~:~:~:~","purl":"pkg:maven\/brace-expansion\/brace-expansion@2.5.0","name":"","version":"2.5.0","bom-ref":"21643","licenses":[]},{"cpe":"cpe:2.3:a:extend:extend:3.0.0:~:~:~:~:~:~:~","purl":"pkg:maven\/extend\/extend@3.0.0","name":"","version":"3.0.0","bom-ref":"21215","licenses":[]},{"cpe":"cpe:2.3:a:extend:extend:3.0.1:~:~:~:~:~:~:~","purl":"pkg:maven\/extend\/extend@3.0.1","name":"","version":"3.0.1","bom-ref":"21219","licenses":[]},{"cpe":"cpe:2.3:a:extend:extend:3.0.2:~:~:~:~:~:~:~","purl":"pkg:maven\/extend\/extend@3.0.2","name":"","version":"3.0.2","bom-ref":"21223","licenses":[]},{"cpe":"cpe:2.3:o:linux:linux-kernel:4.14.1:~:~:~:~:~:~:~","purl":"pkg:maven\/linux\/linux-kernel@4.14.1","name":"","version":"4.14.1","bom-ref":"21825","licenses":[]},{"cpe":"cpe:2.3:o:linux:linux-kernel:5.1.5:~:~:~:~:~:~:~","purl":"pkg:maven\/linux\/linux-kernel@5.1.5","name":"","version":"5.1.5","bom-ref":"21826","licenses":[]},{"cpe":"cpe:2.3:o:linux:linux-kernel:5.2.9:~:~:~:~:~:~:~","purl":"pkg:maven\/linux\/linux-kernel@5.2.9","name":"","version":"5.2.9","bom-ref":"21828","licenses":[]},{"cpe":"cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:~:~:~:~:~:~:~","purl":"pkg:maven\/redhat\/enterprise_linux_desktop@6.0","name":"","version":"6.0","bom-ref":"21832","licenses":[]},{"cpe":"cpe:2.3:a:cryptiles_project:cryptiles:2.0.5:~:~:~:~:~:~:~","purl":"pkg:maven\/cryptiles_project\/cryptiles@2.0.5","name":"","version":"2.0.5","bom-ref":"21871","licenses":[]},{"cpe":"cpe:2.3:a:minimatch:minimatch:3.0.3:~:~:~:~:~:~:~","purl":"pkg:maven\/minimatch\/minimatch@3.0.3","name":"","version":"3.0.3","bom-ref":"21492","licenses":[]},{"cpe":"cpe:2.3:a:minimatch:minimatch:3.0.4:~:~:~:~:~:~:~","purl":"pkg:maven\/minimatch\/minimatch@3.0.4","name":"","version":"3.0.4","bom-ref":"21496","licenses":[]},{"cpe":"cpe:2.3:a:wavpack:wavpack:5.1.0:~:~:~:~:~:~:~","purl":"pkg:maven\/wavpack\/wavpack@5.1.0","name":"","version":"5.1.0","bom-ref":"21837","licenses":[]},{"cpe":"cpe:2.3:a:json-iterator:go:1.1.6:~:~:~:~:~:~:~","purl":"pkg:maven\/json-iterator\/go@1.1.6","name":"","version":"1.1.6","bom-ref":"21805","licenses":[]},{"cpe":"cpe:2.3:a:boltdb:bolt:1.3.1:~:~:~:~:~:~:~","purl":"pkg:maven\/boltdb\/bolt@1.3.1","name":"","version":"1.3.1","bom-ref":"21811","licenses":[]},{"cpe":"cpe:2.3:a:x:image:~:~:~:~:~:~:~:~","purl":"pkg:maven\/x\/image@~","name":"","version":"","bom-ref":"21818","licenses":[]},{"cpe":"cpe:2.3:a:nuget:core:2.5.0:~:~:~:~:~:~:~","purl":"pkg:maven\/nuget\/core@2.5.0","name":"","version":"2.5.0","bom-ref":"21417","licenses":[]},{"cpe":"cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:~:~:~:~:~:~:~","purl":"pkg:maven\/redhat\/enterprise_linux_desktop@6.0","name":"","version":"6.0","bom-ref":"21832","licenses":[]},{"cpe":"cpe:2.3::~:jszip:3.2.2:~:~:~:~:~:~:~","purl":"pkg:maven\/~\/jszip@3.2.2","name":"jszip","version":"3.2.2","bom-ref":"22244","licenses":[{"id":"MIT"},{"id":"GPL-3.0-or-later"}]},{"cpe":"cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:~:~:~:~:~:~:~","purl":"pkg:maven\/redhat\/enterprise_linux_desktop@6.0","name":"","version":"6.0","bom-ref":"21832","licenses":[]},{"cpe":"cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:~:~:~:~:~:~:~","purl":"pkg:maven\/redhat\/enterprise_linux_desktop@6.0","name":"","version":"6.0","bom-ref":"21832","licenses":[]},{"cpe":"cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:~:~:~:~:~:~:~","purl":"pkg:maven\/redhat\/enterprise_linux_desktop@6.0","name":"","version":"6.0","bom-ref":"21832","licenses":[]},{"cpe":"cpe:2.3:a:this_dependency_definitely_does_not_have_a_vulnerability:this_dependency_definitely_does_not_have_a_vulnerability:2.2.4:~:~:~:~:~:~:~","purl":"pkg:maven\/this_dependency_definitely_does_not_have_a_vulnerability\/this_dependency_definitely_does_not_have_a_vulnerability@2.2.4","name":"","version":"2.2.4","bom-ref":"21894","licenses":[]},{"cpe":"cpe:2.3:o:redhat:enterprise_linux_desktop:6.0:~:~:~:~:~:~:~","purl":"pkg:maven\/redhat\/enterprise_linux_desktop@6.0","name":"","version":"6.0","bom-ref":"21832","licenses":[]},{"cpe":"cpe:2.3:a:django:django:2.2.4:~:~:~:~:~:~:~","purl":"pkg:maven\/django\/django@2.2.4","name":"","version":"2.2.4","bom-ref":"21796","licenses":[]},{"cpe":"cpe:2.3::symfony:symfony:4.4.7:~:~:~:~:~:~:~","purl":"pkg:maven\/symfony\/symfony@4.4.7","name":"symfony","version":"4.4.7","bom-ref":"22111","licenses":[{"id":"MIT"}]},{"cpe":"cpe:2.3::apache:thrift:0.12.0:~:~:~:~:~:~:~","purl":"pkg:maven\/apache\/thrift@0.12.0","name":"","version":"0.12.0","bom-ref":"21981","licenses":[]},{"cpe":"cpe:2.3::org.apache.thrift:libthrift:0.12.0:~:~:~:~:~:~:~","purl":"pkg:maven\/org.apache.thrift\/libthrift@0.12.0","name":"","version":"0.12.0","bom-ref":"22037","licenses":[]},{"cpe":"cpe:2.3::org.apache.httpcomponents:httpclient:4.5.6:~:~:~:~:~:~:~","purl":"pkg:maven\/org.apache.httpcomponents\/httpclient@4.5.6","name":"","version":"4.5.6","bom-ref":"22082","licenses":[]},{"cpe":"cpe:2.3::org.apache.thrift:libthrift:0.12.0:~:~:~:~:~:~:~","purl":"pkg:maven\/org.apache.thrift\/libthrift@0.12.0","name":"","version":"0.12.0","bom-ref":"22037","licenses":[]},{"cpe":"cpe:2.3::org.apache.httpcomponents:httpclient:4.5.6:~:~:~:~:~:~:~","purl":"pkg:maven\/org.apache.httpcomponents\/httpclient@4.5.6","name":"","version":"4.5.6","bom-ref":"22082","licenses":[]},{"cpe":"cpe:2.3::debug:debug:2.6.4:~:~:~:~:~:~:~","purl":"pkg:maven\/debug\/debug@2.6.4","name":"debug","version":"2.6.4","bom-ref":"22163","licenses":[{"id":"MIT"}]},{"cpe":"cpe:2.3::depd:depd:1.1.2:~:~:~:~:~:~:~","purl":"pkg:maven\/depd\/depd@1.1.2","name":"","version":"1.1.2","bom-ref":"22168","licenses":[]},{"cpe":"cpe:2.3::destroy:destroy:1.0.4:~:~:~:~:~:~:~","purl":"pkg:maven\/destroy\/destroy@1.0.4","name":"","version":"1.0.4","bom-ref":"22170","licenses":[]},{"cpe":"cpe:2.3::ee-first:ee-first:1.1.1:~:~:~:~:~:~:~","purl":"pkg:maven\/ee-first\/ee-first@1.1.1","name":"","version":"1.1.1","bom-ref":"22172","licenses":[]},{"cpe":"cpe:2.3::encodeurl:encodeurl:1.0.2:~:~:~:~:~:~:~","purl":"pkg:maven\/encodeurl\/encodeurl@1.0.2","name":"","version":"1.0.2","bom-ref":"22174","licenses":[]},{"cpe":"cpe:2.3::escape-html:escape-html:1.0.3:~:~:~:~:~:~:~","purl":"pkg:maven\/escape-html\/escape-html@1.0.3","name":"","version":"1.0.3","bom-ref":"22176","licenses":[]},{"cpe":"cpe:2.3::etag:etag:1.8.1:~:~:~:~:~:~:~","purl":"pkg:maven\/etag\/etag@1.8.1","name":"","version":"1.8.1","bom-ref":"22178","licenses":[]},{"cpe":"cpe:2.3::fresh:fresh:0.5.0:~:~:~:~:~:~:~","purl":"pkg:maven\/fresh\/fresh@0.5.0","name":"","version":"0.5.0","bom-ref":"22180","licenses":[]},{"cpe":"cpe:2.3::http-errors:http-errors:1.6.3:~:~:~:~:~:~:~","purl":"pkg:maven\/http-errors\/http-errors@1.6.3","name":"","version":"1.6.3","bom-ref":"22182","licenses":[]},{"cpe":"cpe:2.3::inherits:inherits:2.0.3:~:~:~:~:~:~:~","purl":"pkg:maven\/inherits\/inherits@2.0.3","name":"","version":"2.0.3","bom-ref":"22184","licenses":[]},{"cpe":"cpe:2.3::~:lodash:3.10.1:~:~:~:~:~:~:~","purl":"pkg:maven\/~\/lodash@3.10.1","name":"lodash","version":"3.10.1","bom-ref":"22191","licenses":[{"id":"MIT"}]},{"cpe":"cpe:2.3::~:lodash:4.17.21:~:~:~:~:~:~:~","purl":"pkg:maven\/~\/lodash@4.17.21","name":"lodash","version":"4.17.21","bom-ref":"22194","licenses":[{"id":"MIT"}]},{"cpe":"cpe:2.3::~:mime:1.3.4:~:~:~:~:~:~:~","purl":"pkg:maven\/~\/mime@1.3.4","name":"","version":"1.3.4","bom-ref":"21021","licenses":[]},{"cpe":"cpe:2.3::ms:ms:0.7.3:~:~:~:~:~:~:~","purl":"pkg:maven\/ms\/ms@0.7.3","name":"","version":"0.7.3","bom-ref":"22196","licenses":[]},{"cpe":"cpe:2.3::ms:ms:1.0.0:~:~:~:~:~:~:~","purl":"pkg:maven\/ms\/ms@1.0.0","name":"","version":"1.0.0","bom-ref":"22197","licenses":[]},{"cpe":"cpe:2.3::~:on-finished:2.3.0:~:~:~:~:~:~:~","purl":"pkg:maven\/~\/on-finished@2.3.0","name":"","version":"2.3.0","bom-ref":"22201","licenses":[]},{"cpe":"cpe:2.3::parseurl:parseurl:1.3.3:~:~:~:~:~:~:~","purl":"pkg:maven\/parseurl\/parseurl@1.3.3","name":"","version":"1.3.3","bom-ref":"22203","licenses":[]},{"cpe":"cpe:2.3::range-parser:range-parser:1.2.1:~:~:~:~:~:~:~","purl":"pkg:maven\/range-parser\/range-parser@1.2.1","name":"","version":"1.2.1","bom-ref":"22205","licenses":[{"id":"MIT"}]},{"cpe":"cpe:2.3::~:send:0.15.2:~:~:~:~:~:~:~","purl":"pkg:maven\/~\/send@0.15.2","name":"","version":"0.15.2","bom-ref":"22209","licenses":[]},{"cpe":"cpe:2.3::~:serve-static:1.12.2:~:~:~:~:~:~:~","purl":"pkg:maven\/~\/serve-static@1.12.2","name":"","version":"1.12.2","bom-ref":"22211","licenses":[]},{"cpe":"cpe:2.3::setprototypeof:setprototypeof:1.1.0:~:~:~:~:~:~:~","purl":"pkg:maven\/setprototypeof\/setprototypeof@1.1.0","name":"","version":"1.1.0","bom-ref":"22226","licenses":[]},{"cpe":"cpe:2.3::statuses:statuses:1.3.1:~:~:~:~:~:~:~","purl":"pkg:maven\/statuses\/statuses@1.3.1","name":"","version":"1.3.1","bom-ref":"22228","licenses":[]},{"cpe":"cpe:2.3::statuses:statuses:1.5.0:~:~:~:~:~:~:~","purl":"pkg:maven\/statuses\/statuses@1.5.0","name":"","version":"1.5.0","bom-ref":"22229","licenses":[]},{"cpe":"cpe:2.3::~:serve-static:1.12.2:~:~:~:~:~:~:~","purl":"pkg:maven\/~\/serve-static@1.12.2","name":"","version":"1.12.2","bom-ref":"22211","licenses":[]},{"cpe":"cpe:2.3::~:lodash:3.10.1:~:~:~:~:~:~:~","purl":"pkg:maven\/~\/lodash@3.10.1","name":"","version":"3.10.1","bom-ref":"22191","licenses":[]},{"cpe":"cpe:2.3::~:serve-static:1.12.2:~:~:~:~:~:~:~","purl":"pkg:maven\/~\/serve-static@1.12.2","name":"","version":"1.12.2","bom-ref":"22211","licenses":[]},{"cpe":"cpe:2.3::~:lodash:3.10.1:~:~:~:~:~:~:~","purl":"pkg:maven\/~\/lodash@3.10.1","name":"","version":"3.10.1","bom-ref":"22191","licenses":[]},{"cpe":"cpe:2.3::~:minimatch:3.0.1:~:~:~:~:~:~:~","purl":"pkg:maven\/~\/minimatch@3.0.1","name":"","version":"3.0.1","bom-ref":"21568","licenses":[]},{"cpe":"cpe:2.3::~:benchmark:2.0.0:~:~:~:~:~:~:~","purl":"pkg:maven\/~\/benchmark@2.0.0","name":"","version":"2.0.0","bom-ref":"22246","licenses":[]},{"cpe":"cpe:2.3::~:docdown:0.2.0:~:~:~:~:~:~:~","purl":"pkg:maven\/~\/docdown@0.2.0","name":"","version":"0.2.0","bom-ref":"22249","licenses":[]},{"cpe":"cpe:2.3::~:lodash:3.10.1:~:~:~:~:~:~:~","purl":"pkg:maven\/~\/lodash@3.10.1","name":"","version":"3.10.1","bom-ref":"22191","licenses":[]},{"cpe":"cpe:2.3::~:lodash:3.10.1:~:~:~:~:~:~:~","purl":"pkg:maven\/~\/lodash@3.10.1","name":"","version":"3.10.1","bom-ref":"22191","licenses":[]},{"cpe":"cpe:2.3::~:lodash:3.10.1:~:~:~:~:~:~:~","purl":"pkg:maven\/~\/lodash@3.10.1","name":"","version":"3.10.1","bom-ref":"22191","licenses":[]},{"cpe":"cpe:2.3::~:serialize-javascript:1.9.1:~:~:~:~:~:~:~","purl":"pkg:maven\/~\/serialize-javascript@1.9.1","name":"","version":"1.9.1","bom-ref":"22224","licenses":[]},{"cpe":"cpe:2.3::~:copy-webpack-plugin:4.4.1:~:~:~:~:~:~:~","purl":"pkg:maven\/~\/copy-webpack-plugin@4.4.1","name":"","version":"4.4.1","bom-ref":"22219","licenses":[]},{"cpe":"cpe:2.3::debug:debug:2.6.4:~:~:~:~:~:~:~","purl":"pkg:maven\/debug\/debug@2.6.4","name":"","version":"2.6.4","bom-ref":"22163","licenses":[]},{"cpe":"cpe:2.3::depd:depd:1.1.2:~:~:~:~:~:~:~","purl":"pkg:maven\/depd\/depd@1.1.2","name":"","version":"1.1.2","bom-ref":"22168","licenses":[]},{"cpe":"cpe:2.3::destroy:destroy:1.0.4:~:~:~:~:~:~:~","purl":"pkg:maven\/destroy\/destroy@1.0.4","name":"","version":"1.0.4","bom-ref":"22170","licenses":[]},{"cpe":"cpe:2.3::ee-first:ee-first:1.1.1:~:~:~:~:~:~:~","purl":"pkg:maven\/ee-first\/ee-first@1.1.1","name":"","version":"1.1.1","bom-ref":"22172","licenses":[]},{"cpe":"cpe:2.3::encodeurl:encodeurl:1.0.2:~:~:~:~:~:~:~","purl":"pkg:maven\/encodeurl\/encodeurl@1.0.2","name":"","version":"1.0.2","bom-ref":"22174","licenses":[]},{"cpe":"cpe:2.3::escape-html:escape-html:1.0.3:~:~:~:~:~:~:~","purl":"pkg:maven\/escape-html\/escape-html@1.0.3","name":"","version":"1.0.3","bom-ref":"22176","licenses":[]},{"cpe":"cpe:2.3::etag:etag:1.8.1:~:~:~:~:~:~:~","purl":"pkg:maven\/etag\/etag@1.8.1","name":"","version":"1.8.1","bom-ref":"22178","licenses":[]},{"cpe":"cpe:2.3::fresh:fresh:0.5.0:~:~:~:~:~:~:~","purl":"pkg:maven\/fresh\/fresh@0.5.0","name":"","version":"0.5.0","bom-ref":"22180","licenses":[]},{"cpe":"cpe:2.3::http-errors:http-errors:1.6.3:~:~:~:~:~:~:~","purl":"pkg:maven\/http-errors\/http-errors@1.6.3","name":"","version":"1.6.3","bom-ref":"22182","licenses":[]},{"cpe":"cpe:2.3::inherits:inherits:2.0.3:~:~:~:~:~:~:~","purl":"pkg:maven\/inherits\/inherits@2.0.3","name":"","version":"2.0.3","bom-ref":"22184","licenses":[]},{"cpe":"cpe:2.3::~:lodash:3.10.1:~:~:~:~:~:~:~","purl":"pkg:maven\/~\/lodash@3.10.1","name":"","version":"3.10.1","bom-ref":"22191","licenses":[]},{"cpe":"cpe:2.3::~:mime:1.3.4:~:~:~:~:~:~:~","purl":"pkg:maven\/~\/mime@1.3.4","name":"","version":"1.3.4","bom-ref":"21021","licenses":[]},{"cpe":"cpe:2.3::ms:ms:0.7.3:~:~:~:~:~:~:~","purl":"pkg:maven\/ms\/ms@0.7.3","name":"","version":"0.7.3","bom-ref":"22196","licenses":[]},{"cpe":"cpe:2.3::ms:ms:1.0.0:~:~:~:~:~:~:~","purl":"pkg:maven\/ms\/ms@1.0.0","name":"","version":"1.0.0","bom-ref":"22197","licenses":[]},{"cpe":"cpe:2.3::~:on-finished:2.3.0:~:~:~:~:~:~:~","purl":"pkg:maven\/~\/on-finished@2.3.0","name":"","version":"2.3.0","bom-ref":"22201","licenses":[]},{"cpe":"cpe:2.3::parseurl:parseurl:1.3.3:~:~:~:~:~:~:~","purl":"pkg:maven\/parseurl\/parseurl@1.3.3","name":"","version":"1.3.3","bom-ref":"22203","licenses":[]},{"cpe":"cpe:2.3::range-parser:range-parser:1.2.1:~:~:~:~:~:~:~","purl":"pkg:maven\/range-parser\/range-parser@1.2.1","name":"","version":"1.2.1","bom-ref":"22205","licenses":[]},{"cpe":"cpe:2.3::~:send:0.15.2:~:~:~:~:~:~:~","purl":"pkg:maven\/~\/send@0.15.2","name":"","version":"0.15.2","bom-ref":"22209","licenses":[]},{"cpe":"cpe:2.3::~:serve-static:1.12.2:~:~:~:~:~:~:~","purl":"pkg:maven\/~\/serve-static@1.12.2","name":"","version":"1.12.2","bom-ref":"22211","licenses":[]},{"cpe":"cpe:2.3::setprototypeof:setprototypeof:1.1.0:~:~:~:~:~:~:~","purl":"pkg:maven\/setprototypeof\/setprototypeof@1.1.0","name":"","version":"1.1.0","bom-ref":"22226","licenses":[]},{"cpe":"cpe:2.3::statuses:statuses:1.3.1:~:~:~:~:~:~:~","purl":"pkg:maven\/statuses\/statuses@1.3.1","name":"","version":"1.3.1","bom-ref":"22228","licenses":[]},{"cpe":"cpe:2.3::statuses:statuses:1.5.0:~:~:~:~:~:~:~","purl":"pkg:maven\/statuses\/statuses@1.5.0","name":"","version":"1.5.0","bom-ref":"22229","licenses":[]},{"cpe":"cpe:2.3:a:org.apache.logging.log4j:log4j-core:2.13.1:~:~:~:~:~:~:~","purl":"pkg:maven\/org.apache.logging.log4j\/log4j-core@2.13.1","name":"","version":"2.13.1","bom-ref":"22351","licenses":[]}],"vulnerabilities":[{"id":"CVE-2018-14634","bom-ref":"CVE-2018-14634","ratings":[{"score":7.8,"severity":"high","method":"CVSSv3"},{"score":7.2,"severity":"high","method":"CVSSv2"}],"cwes":[],"affects":[{"ref":"21825"},{"ref":"21826"},{"ref":"21828"}]},{"id":"debricked-cve-1","bom-ref":"debricked-cve-1","source":{"url":"https:\/\/www.vuln-source.com","name":"debricked"},"ratings":[],"cwes":[],"description":"Lorem Ipsum","affects":[{"ref":"21417"}]},{"id":"debricked-cve-4","bom-ref":"debricked-cve-4","ratings":[],"cwes":[],"affects":[{"ref":"21417"}]},{"id":"debricked-cve-5","bom-ref":"debricked-cve-5","ratings":[{"score":10.0,"severity":"critical","method":"CVSSv3"}],"cwes":[],"affects":[{"ref":"21417"}]},{"id":"debricked-cve-6","bom-ref":"debricked-cve-6","ratings":[],"cwes":[],"affects":[{"ref":"21417"}]}]}
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.4",
+  "version": 1,
+  "metadata" : {
+    "timestamp" : "2022-01-11T02:55:27Z",
+    "tools" : [
+      {
+        "vendor" : "CycloneDX",
+        "name" : "CycloneDX Maven plugin",
+        "version" : "2.5.3",
+        "hashes" : [
+          {
+            "alg" : "MD5",
+            "content" : "4f7d894200ad695fc9f0aad66d7da40a"
+          },
+          {
+            "alg" : "SHA-1",
+            "content" : "c044d9b726650cbea3adeb5cc1715c67d8356c0a"
+          },
+          {
+            "alg" : "SHA-256",
+            "content" : "b9a385e430e1f5efd9b835a084c195dde4d5e1bc79e469a8187ec58275c15313"
+          },
+          {
+            "alg" : "SHA-384",
+            "content" : "d96f68ef4b8830d70dc2eb5f2de5211d96b70dd1169da641f34474265c06a5321b63d2c80fe2d82d74c767391225e480"
+          },
+          {
+            "alg" : "SHA-512",
+            "content" : "1d7d1129cdc8604772b3c454d8dff98d936f85af705c95705e3263a038c0bb58fdd58c0b90efa3f56b4ce8ef9c84d3154b74b8451e0470f856f4d688489704b0"
+          },
+          {
+            "alg" : "SHA3-256",
+            "content" : "44231962fe0c1e5501ca38ad3320f9223ea5e8d62aa8aad170577818801ce349"
+          },
+          {
+            "alg" : "SHA3-384",
+            "content" : "99659ce3e58d8416f9e28d6b87c800442a79c4a5703fb657f6a9da87495d1d9d3b9788e06a3d6ea0e1b659a4681a4c92"
+          },
+          {
+            "alg" : "SHA3-512",
+            "content" : "8d5c3f0ee5a53cc714c4d829ccc07688f951a6b6655ad1e6435b8ab1c281bc38a78073b329bdaaf4887114b6843723ac8b5176a5f954581960a43662c688a95a"
+          }
+        ]
+      }
+    ],
+    "component" : {
+      "group" : "com.example",
+      "name" : "example-app",
+      "version" : "1.0.0",
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0",
+            "url" : "http://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/com.example/example-app@1.0.0?type=jar",
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.example/example-app@1.0.0?type=jar"
+    }
+  },
+  "components" : [
+    {
+      "publisher" : "FasterXML",
+      "group" : "com.fasterxml.jackson.core",
+      "name" : "jackson-databind",
+      "version" : "2.10.0",
+      "description" : "General data-binding functionality for Jackson: works on core streaming API",
+      "scope" : "optional",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "195bfa368ad502b05427d9fb0346735d"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "1127c9cf62f2bb3121a3a2a0a1351d251a602117"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "8e6c566c67fc61a96c5dfc4a71d430f2565765778ec9a6ef216c5460a9911b60"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "213c54b716a7bee01af296a6b965e8fcad42ef26dc3ef9a514b9f88e3b2e8547391a07a95696cd74510f3c948c6b4a63"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "64851a5f6cb9805bade8376046b02050bd3bd377346e8339bc7d3eb4310417e80029f073e873da1ec1e21017e7480683bdf969c680b870153a5e16bcb75b7815"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "a9b13e669b7d488b319187b9c7ce11928a026412e12dc46e572ade0c7a334a0a"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "12d4eb511d20959451f13c2659286bb00c7ad6d78a4fb412295781d144a2317da15f7908ec4cb97635161389c6205368"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "7938f4bdea72a5b9e13c221568094829f3cd904bcbb6319e1f2869760420c9646c4c97b511e31be93dfbc2559fc46ed0844e12a4c610e31e095dcf34651b40bd"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.10.0?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "http://github.com/FasterXML/jackson-databind"
+        },
+        {
+          "type" : "website",
+          "url" : "http://fasterxml.com/"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.10.0?type=jar"
+    },
+    {
+      "publisher" : "FasterXML",
+      "group" : "com.fasterxml.jackson.core",
+      "name" : "jackson-annotations",
+      "version" : "2.10.0",
+      "description" : "Core annotations used for value types, used by Jackson data binding package.",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "138ada7579397b2a88e41b132b0b46a3"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "e01cfd93b80d6773b3f757c78e756c9755b47b81"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "77a0846219774a8269bc1b38cc00294908d34e77f8a9da34d97673982f75853d"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "08eb9a859d3ab5467c944d6a4755d8042d0d1f3926283be1be6dce111fd0d5dcb110436aea0023ea5961754957302ba3"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "13e612f06bfa448926161f0a122ca8aba19581fae50da1e970bc6121bdc608b402f19cb47bf12d0c3cd386df3f2dec40c58bb1eab1a7f200a0c06c66d3714088"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "e798bce506db7b9390c989011dc0f4adf2e52ca55aec3fa81f096b2efc76b7e2"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "68abab9a270aaa1a68bddb664a74cda05df68d52344a8dc6dbc932e10064b639e4c4ffc878c93485af2480ef90077e10"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "6795dee9f4844bd342a014771b7764eba8cfc543b82c52f75e799e110b3b4c2b57736d47dd35ee00186a318b8940bc6d30c493dc2050dff4642457166502724e"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.10.0?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "http://github.com/FasterXML/jackson-annotations"
+        },
+        {
+          "type" : "website",
+          "url" : "http://fasterxml.com/"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.10.0?type=jar"
+    },
+    {
+      "publisher" : "FasterXML",
+      "group" : "com.fasterxml.jackson.core",
+      "name" : "jackson-core",
+      "version" : "2.10.0",
+      "description" : "Core Jackson processing abstractions (aka Streaming API), implementation for JSON",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "b109d8d9d0519111d5756389fa5bfd87"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "4e2c5fa04648ec9772c63e2101c53af6504e624e"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "69e7695b1e40834fa1242fc328a4010607911ced3706ab79abc769d451197513"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "2c167693126621f418e03cdf81e7c3ab084fc7bafff983e1b0c8fcd743eae58a5322577c1476b2ca6d0c0afa9046f606"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "67ca07f54feff7dcc1c098ae307ddb4c80f1e074ee8400a56b598b2b7b334594a042eb1e1f4ec3bda229f0eeedab9bf0938b1687439a0ea80984fbc61f8f13dd"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "cef9b850571dcfbdebf73bad6d20ee759335810e8d34927e2228378287d8a62c"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "2fea8fa51b292cd6b61796eed54c2719beb45fab2310c2c07876e30fe9cfb2c94ddae4281ca4952d49ef20a3ecf795fd"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "be3791a60692fc78a7f8de546d7c4f76e937b75ee088dde1eefb69c3555c61ad7ba25cb38c1daf507af737452e195508cfa4f7ec74cc59cfcd25e22ccd3ca949"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.10.0?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "vcs",
+          "url" : "http://github.com/FasterXML/jackson-core"
+        },
+        {
+          "type" : "website",
+          "url" : "http://fasterxml.com/"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.10.0?type=jar"
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "id": "CVE-2020-25649",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-25649"
+      },
+      "references": [
+        {
+          "id": "SNYK-JAVA-COMFASTERXMLJACKSONCORE-1048302",
+          "source": {
+            "name": "SNYK",
+            "url": "https://security.snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-1048302"
+          }
+        }
+      ],
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD",
+            "url": "https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N&version=3.1"
+          },
+          "score": 7.5,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        {
+          "source": {
+            "name": "SNYK",
+            "url": "https://security.snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-1048302"
+          },
+          "score": 8.2,
+          "severity": "high",
+          "method": "CVSSv31",
+          "vector": "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        },
+        {
+          "source": {
+            "name": "Acme Inc",
+            "url": "https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N/CR:X/IR:X/AR:X/MAV:X/MAC:X/MPR:X/MUI:X/MS:X/MC:N/MI:N/MA:N&version=3.1"
+          },
+          "score": 0.0,
+          "severity": "none",
+          "method": "CVSSv31",
+          "vector": "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N/CR:X/IR:X/AR:X/MAV:X/MAC:X/MPR:X/MUI:X/MS:X/MC:N/MI:N/MA:N"
+        }
+      ],
+      "cwes": [
+        611
+      ],
+      "description": "com.fasterxml.jackson.core:jackson-databind is a library which contains the general-purpose data-binding functionality and tree-model for Jackson Data Processor.\n\nAffected versions of this package are vulnerable to XML External Entity (XXE) Injection. A flaw was found in FasterXML Jackson Databind, where it does not have entity expansion secured properly in the DOMDeserializer class. The highest threat from this vulnerability is data integrity.",
+      "detail": "XXE Injection is a type of attack against an application that parses XML input. XML is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable. By default, many XML processors allow specification of an external entity, a URI that is dereferenced and evaluated during XML processing. When an XML document is being parsed, the parser can make a request and include the content at the specified URI inside of the XML document.\n\nAttacks can include disclosing local files, which may contain sensitive data such as passwords or private user data, using file: schemes or relative paths in the system identifier.",
+      "recommendation": "Upgrade com.fasterxml.jackson.core:jackson-databind to version 2.6.7.4, 2.9.10.7, 2.10.5.1 or higher.",
+      "advisories": [
+        {
+          "title": "GitHub Commit",
+          "url": "https://github.com/FasterXML/jackson-databind/commit/612f971b78c60202e9cd75a299050c8f2d724a59"
+        },
+        {
+          "title": "GitHub Issue",
+          "url": "https://github.com/FasterXML/jackson-databind/issues/2589"
+        },
+        {
+          "title": "RedHat Bugzilla Bug",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1887664"
+        }
+      ],
+      "created": "2020-12-03T00:00:00.000Z",
+      "published": "2020-12-03T00:00:00.000Z",
+      "updated": "2021-10-26T00:00:00.000Z",
+      "credits": {
+        "individuals": [
+          {
+            "name": "Bartosz Baranowski"
+          }
+        ]
+      },
+      "analysis": {
+        "state": "not_affected",
+        "justification": "code_not_reachable",
+        "response": ["will_not_fix", "update"],
+        "detail": "Automated dataflow analysis and manual code review indicates that the vulnerable code is not reachable, either directly or indirectly."
+      },
+      "affects": [
+        {
+          "ref": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.10.0?type=jar"
+        }
+      ]
+    }
+  ]
+}

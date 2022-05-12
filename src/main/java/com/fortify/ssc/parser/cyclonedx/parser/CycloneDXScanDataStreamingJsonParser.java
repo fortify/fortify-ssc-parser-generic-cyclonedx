@@ -28,6 +28,6 @@ import com.fortify.util.ssc.parser.json.AbstractScanDataStreamingJsonParser;
 
 public class CycloneDXScanDataStreamingJsonParser extends AbstractScanDataStreamingJsonParser<CycloneDXScanDataStreamingJsonParser> {
 	public CycloneDXScanDataStreamingJsonParser() {
-		super(".sarif", ".json");
+		super(".cdx.json", ".json");
 	}
 }

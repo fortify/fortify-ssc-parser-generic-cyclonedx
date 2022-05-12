@@ -32,19 +32,43 @@ import com.fortify.util.mapdb.CustomSerializerElsa;
 import lombok.Getter;
 
 @Getter
-public final class Artifact implements Serializable {
+public final class Component implements Serializable {
 	private static final long serialVersionUID = 1L;
-	public static final CustomSerializerElsa<Artifact> SERIALIZER = new CustomSerializerElsa<>(Artifact.class);
-	@JsonProperty private ArtifactLocation location;
-	// @JsonProperty private Integer parentIndex;
-	// @JsonProperty private Integer offset;
-	// @JsonProperty private Integer length;
-	// @JsonProperty private String[] roles;
-	// @JsonProperty private String mimeType;
-	// @JsonProperty private ArtifactContent contents;
-	// @JsonProperty private String encoding;
-	// @JsonProperty private String sourceLanguage;
-	// @JsonProperty private Map<String, String> hashes;
-	// @JsonProperty private Date lastModifiedTimeUtc;
-	// @JsonProperty private String description;
+	public static final CustomSerializerElsa<Component> SERIALIZER = new CustomSerializerElsa<>(Component.class);
+	@JsonProperty private ComponentType type;
+	@JsonProperty("bom-ref") private String bomRef;
+	// @JsonProperty private Supplier supplier;
+	// @JsonProperty private String author;
+	// @JsonProperty private String publisher;
+	@JsonProperty private String group;
+	@JsonProperty private String name;
+	@JsonProperty private String version;
+	@JsonProperty private String description;
+	@JsonProperty private ComponentScope scope;
+	// @JsonProperty private ComponentHash[] hashes;
+	// @JsonProperty private ComponentLicense[] licenses;
+	// @JsonProperty private String copyright;
+	// @JsonProperty private String cpe;
+	@JsonProperty private String purl;
+	// @JsonProperty private ComponentSWID swid;
+	// @JsonProperty private ComponentPedigree pedigree;
+	// @JsonProperty private ExternalReference[] externalReferences;
+	// @JsonProperty private Component[] components;
+	// @JsonProperty private ComponentEvidence evidence;
+	// @JsonProperty private ComponentReleaseNotes releaseNotes;
+	// @JsonProperty private Property properties;
+	// @JsonProperty private JSFSignature signature;
+	
+	public static enum ComponentType {
+		application, framework, library, container, 
+		@JsonProperty("operating-system") operating_system, device, firmware, file 
+	}
+	
+	public static enum ComponentScope {
+		required, optional, excluded 
+	}
+
+	public final String getScopeName() {
+		return scope==null ? "unknown" : scope.toString();
+	}
 }

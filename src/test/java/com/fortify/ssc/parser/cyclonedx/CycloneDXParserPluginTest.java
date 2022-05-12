@@ -47,21 +47,12 @@ import com.fortify.plugin.api.ScanEntry;
 import com.fortify.plugin.api.ScanParsingException;
 import com.fortify.plugin.api.StaticVulnerabilityBuilder;
 import com.fortify.plugin.api.VulnerabilityHandler;
-import com.fortify.ssc.parser.cyclonedx.CycloneDXParserPlugin;
 import com.fortify.ssc.parser.cyclonedx.parser.ScanParser;
 
 class CycloneDXParserPluginTest {
-	private static final String[] SAMPLE_FILES_2_1_0 = {
-			"EightBall.fpr.sarif",
-			"EightBall.xml.sarif",
-			"WebGoat5.0.fpr.sarif",
-			"WebGoat5.0.xml.sarif",
-			"spec-minimal.sarif", 
-			"spec-minimal-without-source.sarif",
-			"spec-minimal-with-source.sarif",
-			"spec-comprehensive.sarif",
-			"github.com_microsoft_sarif-sdk_blob_master_src_Samples_Sarif.WorkItems.Sample_SampleTestFiles_Current.sarif",
-			"github.com_microsoft_sarif-sdk_blob_master_src_Test.FunctionalTests.Sarif_v2_ConverterTestData_ContrastSecurity_WebGoat.xml.sarif"
+	private static final String[] SAMPLE_FILES = {
+			"sample-cyclone-with-vulns.json",
+			"sample-cyclone-debricked.json"
 	};
 	
 	private final ScanData getScanData(String fileName) {
@@ -119,32 +110,32 @@ class CycloneDXParserPluginTest {
 	};
 	
 	@ParameterizedTest
-	@MethodSource("getSampleFiles2_1_0")
+	@MethodSource("getSampleFiles")
 	void testParseScan(String file) throws Exception {
 		System.err.println("\n\n---- "+file+" - parseScan");
-		new CycloneDXParserPlugin().parseScan(getScanData("2.1.0/"+file), scanBuilder);
+		new CycloneDXParserPlugin().parseScan(getScanData(file), scanBuilder);
 		// TODO Check actual output
 	}
 	
 	@ParameterizedTest
-	@MethodSource("getSampleFiles2_1_0")
+	@MethodSource("getSampleFiles")
 	void testParseVulnerabilities(String file) throws Exception {
 		System.err.println("\n\n---- "+file+" - parseVulnerabilities");
-		new CycloneDXParserPlugin().parseVulnerabilities(getScanData("2.1.0/"+file), vulnerabilityHandler);
+		new CycloneDXParserPlugin().parseVulnerabilities(getScanData(file), vulnerabilityHandler);
 		// TODO Check actual output
 	}
 	
-	public static List<String> getSampleFiles2_1_0() {
-		return Arrays.asList(SAMPLE_FILES_2_1_0);
+	public static List<String> getSampleFiles() {
+		return Arrays.asList(SAMPLE_FILES);
 	}
 	
 	@Test
-	void testParseScanUnsupportedVersion() throws Exception {
+	void testParseScanUnsupportedFormat() throws Exception {
 		try {
-			new CycloneDXParserPlugin().parseScan(getScanData("2.0.0/spec-comprehensive-2.0.0.sarif"), scanBuilder);
+			new CycloneDXParserPlugin().parseScan(getScanData("sample-unsupported-format.json"), scanBuilder);
 			fail("Parser plugin didn't throw exception for unsupported input file version");
 		} catch (ScanParsingException e) {
-			assertTrue(e.getMessage().startsWith(ScanParser.MSG_UNSUPPORTED_INPUT_FILE_VERSION), "Exception message starts with '"+ScanParser.MSG_UNSUPPORTED_INPUT_FILE_VERSION+"'");
+			assertTrue(e.getMessage().startsWith(ScanParser.MSG_UNSUPPORTED_INPUT_FILE), "Exception message starts with '"+ScanParser.MSG_UNSUPPORTED_INPUT_FILE+"'");
 		}
 	}
 
