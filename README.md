@@ -106,7 +106,7 @@ As raw scan results:
 * Click the `UPLOAD` button
 * Click the `ADD FILES` button, and select the JSON file to upload
 * Enable the `3rd party results` check box
-* Select the `SARIF` type
+* Select the `CYCLONEDX` type
 
 *Note that uploading raw scan results is only supported for manual uploads through the SSC web interface, and this functionality was removed in SSC 20.2 so no longer available in recent SSC versions. Please submit a feature request if you'd like to see this easier process for ad-hoc uploading of 3<sup>rd</sup>-party results restored, referencing Octane id #448174.*
 
