@@ -1,0 +1,162 @@
+{
+  "bomFormat" : "CycloneDX",
+  "specVersion" : "1.4",
+  "serialNumber" : "urn:uuid:47f48d26-1a45-4e95-804a-3c40643747dd",
+  "version" : 1,
+  "metadata" : {
+    "timestamp" : "2022-05-12T14:21:33Z",
+    "tools" : [
+      {
+        "vendor" : "OWASP",
+        "name" : "Dependency-Track",
+        "version" : "4.4.2"
+      }
+    ],
+    "component" : {
+      "name" : "Test",
+      "version" : "2.0",
+      "type" : "library",
+      "bom-ref" : "e066bf79-bdd7-4944-8868-e73427fc599e"
+    }
+  },
+  "components" : [
+    {
+      "group" : "commons-collections",
+      "name" : "commons-collections",
+      "version" : "3.2",
+      "description" : "Types that extend and augment the Java Collections Framework.",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "7b9216b608d550787bdf43a63d88bf3b"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "f951934aa5ae5a88d7e6dfaa6d32307d834a88be"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "093fea360752de55afcb80cf713403eb1a66cb7dc0d529955b6f4a96f975df5c"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "4c3361c8cf553c6fc34fe10624985bc1a08ea84547f4fb970487e99dc795a67b4bd36a0a1015492019e36dc1ae8b36def98f3ed3bf3e8382057923ddf67ee5ef"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "ccf43652f0b60dbf82c4bc5f8c11fe4332f58569be29fec98583bb0cdfaaa5ef"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "c0b557b2bcff5779dd74133f9901985f463d289b729e9b5838ed97e9c3ab9707af58bd2479919922767b09cd7cb05cd0e79bb452a0e91f91cf1919997bc7d5be"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/commons-collections/commons-collections@3.2?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "website",
+          "url" : "http://jakarta.apache.org"
+        },
+        {
+          "type" : "distribution",
+          "url" : "file:///www/jakarta.apache.org/builds/jakarta-commons/collections/"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "http://issues.apache.org/bugzilla/"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "http://mail-archives.apache.org/eyebrowse/SummarizeList?listName=commons-dev@jakarta.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "http://svn.apache.org/repos/asf/jakarta/commons/proper/collections/trunk"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "ba74fdba-14d9-433b-b9f5-2d891b9c7016"
+    }
+  ],
+  "vulnerabilities" : [
+    {
+      "bom-ref" : "ef1c68c3-8b31-42d5-bee6-8686b0d31598",
+      "id" : "CVE-2017-15708",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 7.5,
+          "severity" : "high",
+          "method" : "CVSSv2",
+          "vector" : "(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        },
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 9.8,
+          "severity" : "critical",
+          "method" : "CVSSv3",
+          "vector" : "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "cwes" : [
+        74
+      ],
+      "description" : "In Apache Synapse, by default no authentication is required for Java Remote Method Invocation (RMI). So Apache Synapse 3.0.1 or all previous releases (3.0.0, 2.1.0, 2.0.0, 1.2, 1.1.2, 1.1.1) allows remote code execution attacks that can be performed by injecting specially crafted serialized objects. And the presence of Apache Commons Collections 3.2.1 (commons-collections-3.2.1.jar) or previous versions in Synapse distribution makes this exploitable. To mitigate the issue, we need to limit RMI access to trusted users only. Further upgrading to 3.0.1 version will eliminate the risk of having said Commons Collection version. In Synapse 3.0.1, Commons Collection has been updated to 3.2.2 version.",
+      "published" : "2017-12-11T15:29:00Z",
+      "updated" : "2022-03-08T15:39:00Z",
+      "affects" : [
+        {
+          "ref" : "ba74fdba-14d9-433b-b9f5-2d891b9c7016"
+        }
+      ]
+    },
+    {
+      "bom-ref" : "08f596c3-8999-4f05-852f-d958e9c1dc53",
+      "id" : "CVE-2015-6420",
+      "source" : {
+        "name" : "NVD",
+        "url" : "https://nvd.nist.gov/"
+      },
+      "ratings" : [
+        {
+          "source" : {
+            "name" : "NVD",
+            "url" : "https://nvd.nist.gov/"
+          },
+          "score" : 7.5,
+          "severity" : "high",
+          "method" : "CVSSv2",
+          "vector" : "(AV:N/AC:L/Au:N/C:P/I:P/A:P)"
+        }
+      ],
+      "cwes" : [
+        502
+      ],
+      "description" : "Serialized-object interfaces in certain Cisco Collaboration and Social Media; Endpoint Clients and Client Software; Network Application, Service, and Acceleration; Network and Content Security Devices; Network Management and Provisioning; Routing and Switching - Enterprise and Service Provider; Unified Computing; Voice and Unified Communications Devices; Video, Streaming, TelePresence, and Transcoding Devices; Wireless; and Cisco Hosted Services products allow remote attackers to execute arbitrary commands via a crafted serialized Java object, related to the Apache Commons Collections (ACC) library.",
+      "published" : "2015-12-15T05:59:00Z",
+      "updated" : "2021-03-10T16:15:00Z",
+      "affects" : [
+        {
+          "ref" : "ba74fdba-14d9-433b-b9f5-2d891b9c7016"
+        }
+      ]
+    }
+  ]
+}

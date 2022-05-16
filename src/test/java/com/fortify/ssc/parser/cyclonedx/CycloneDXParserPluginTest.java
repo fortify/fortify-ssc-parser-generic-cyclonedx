@@ -52,7 +52,8 @@ import com.fortify.ssc.parser.cyclonedx.parser.ScanParser;
 class CycloneDXParserPluginTest {
 	private static final String[] SAMPLE_FILES = {
 			"sample-cyclone-with-vulns.json",
-			"sample-cyclone-debricked.json"
+			"sample-cyclone-debricked.json",
+			"sample-cyclone-dependencytrack.json",
 	};
 	
 	private final ScanData getScanData(String fileName) {
