@@ -14,6 +14,7 @@ ext.sscParserPluginVersion = project.version
 
 ext {
 	gradleHelpersLocation = "https://raw.githubusercontent.com/fortify-ps/gradle-helpers/1.7"
+	debrickedBaseName = "fortify-ssc-parser-debricked"
 }
 
 apply from: "${gradleHelpersLocation}/repo-helper.gradle"
@@ -44,7 +45,38 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-params:5.8.2")
 }
 
-task dist(type: Zip) {
+jar {
+	exclude 'plugin-debricked.xml'
+	exclude 'images/debricked-*.png'
+	baseName = "${rootProject.name}"
+}
+
+task debrickedJar(type: Jar) {
+    from sourceSets.main.output
+    // replace version placeholders in plugin.xml
+    filesMatching('plugin-debricked.xml') {
+        filter {
+            it.replaceAll('<!--VERSION-->.*?<!--/VERSION-->', sscParserPluginVersion)
+        }
+    }
+    from {
+		configurations.implementationExport.collect { 
+    		it.isDirectory() ? it : zipTree(it).matching { 
+    			exclude 'META-INF/*' 
+    			exclude 'module-info.class' // Avoid duplicate entries from recent Jackson libraries 
+    		} 
+    	} 
+    }
+    duplicatesStrategy = 'exclude'
+    exclude 'plugin.xml'
+    exclude 'images/cyclonedx-*.png'
+	rename("plugin-debricked.xml", "plugin.xml")
+    baseName = "${debrickedBaseName}"
+}
+
+assemble.dependsOn(debrickedJar)
+
+task distCycloneDX(type: Zip) {
 	dependsOn 'build', 'readme2html'
 	archiveFileName = "${rootProject.name}-${project.version}.zip"
 	destinationDirectory = file("$buildDir/dist")
@@ -54,6 +86,25 @@ task dist(type: Zip) {
 	from "${buildDir}/html"
 	from("${projectDir}") {
 		include "sampleData/**/*"
+		exclude "sampleData/**/*debricked*"
 		include "LICENSE.TXT"
 	}
+}
+
+task distDebricked(type: Zip) {
+	dependsOn 'build', 'readme2html'
+	archiveFileName = "${debrickedBaseName}-${project.version}.zip"
+	destinationDirectory = file("$buildDir/dist")
+	from("${buildDir}/${libsDirName}") {
+		include "${debrickedBaseName}-${project.version}.jar"
+	}
+	from "${buildDir}/html"
+	from("${projectDir}") {
+		include "sampleData/**/*debricked*"
+		include "LICENSE.TXT"
+	}
+}
+
+task dist {
+	dependsOn 'distCycloneDX', 'distDebricked'
 }
