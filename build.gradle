@@ -85,8 +85,7 @@ task distCycloneDX(type: Zip) {
 	}
 	from "${buildDir}/html"
 	from("${projectDir}") {
-		include "sampleData/**/*"
-		exclude "sampleData/**/*debricked*"
+		include "sampleData/cyclonedx/*"
 		include "LICENSE.TXT"
 	}
 }
@@ -100,7 +99,7 @@ task distDebricked(type: Zip) {
 	}
 	from "${buildDir}/html"
 	from("${projectDir}") {
-		include "sampleData/**/*debricked*"
+		include "sampleData/debricked/*"
 		include "LICENSE.TXT"
 	}
 }
