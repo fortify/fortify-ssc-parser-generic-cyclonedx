@@ -1,11 +1,6 @@
 package com.fortify.ssc.parser.cyclonedx.parser;
 
-import java.util.Arrays;
-import java.util.stream.Collectors;
-
 import org.apache.commons.codec.digest.DigestUtils;
-import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.StringUtils;
 
 import com.fortify.plugin.api.BasicVulnerabilityBuilder.Priority;
 import com.fortify.plugin.api.FortifyAnalyser;
@@ -14,7 +9,6 @@ import com.fortify.plugin.api.StaticVulnerabilityBuilder;
 import com.fortify.plugin.api.VulnerabilityHandler;
 import com.fortify.ssc.parser.cyclonedx.CustomVulnAttribute;
 import com.fortify.ssc.parser.cyclonedx.domain.Bom;
-import com.fortify.ssc.parser.cyclonedx.domain.Bom.BomTool;
 import com.fortify.ssc.parser.cyclonedx.domain.Component;
 import com.fortify.ssc.parser.cyclonedx.domain.Vulnerability;
 import com.fortify.ssc.parser.cyclonedx.domain.Vulnerability.ComponentReference;
@@ -90,16 +84,24 @@ public final class VulnerabilitiesProducer {
 			
 			//vb.set*CustomAttributeValue(...)
 			
-			vb.setStringCustomAttributeValue(CustomVulnAttribute.vulnId, vulnerability.getId());
+			vb.setStringCustomAttributeValue(CustomVulnAttribute.issueId, vulnerability.getId());
+			vb.setStringCustomAttributeValue(CustomVulnAttribute.issueUrl, vulnerability.getIssueUrl(bom));
+			vb.setStringCustomAttributeValue(CustomVulnAttribute.cwes, vulnerability.getCwesAsString());
+			vb.setStringCustomAttributeValue(CustomVulnAttribute.invoked, vulnerability.getInvokedAsString());
+			vb.setStringCustomAttributeValue(CustomVulnAttribute.controllable, vulnerability.getControllableAsString());
+			vb.setStringCustomAttributeValue(CustomVulnAttribute.evidenceUrl, vulnerability.getEvidenceUrl());
 			vb.setStringCustomAttributeValue(CustomVulnAttribute.detail, vulnerability.getDetail());
 			vb.setStringCustomAttributeValue(CustomVulnAttribute.recommendation, vulnerability.getRecommendation());
-			vb.setStringCustomAttributeValue(CustomVulnAttribute.toolName, getToolName(bom));
+			
+			vb.setStringCustomAttributeValue(CustomVulnAttribute.toolName, bom.getToolName());
 			
 			vb.setStringCustomAttributeValue(CustomVulnAttribute.componentGroup, component.getGroup());
 			vb.setStringCustomAttributeValue(CustomVulnAttribute.componentName, component.getName());
 			vb.setStringCustomAttributeValue(CustomVulnAttribute.componentVersion, component.getVersion());
 			vb.setStringCustomAttributeValue(CustomVulnAttribute.componentScope, component.getScopeName());
 			vb.setStringCustomAttributeValue(CustomVulnAttribute.componentDescription, component.getDescription());
+			vb.setStringCustomAttributeValue(CustomVulnAttribute.componentPurl, component.getPurl());
+			vb.setStringCustomAttributeValue(CustomVulnAttribute.componentLicenses, component.getLicensesAsString());
     		
     		vb.completeVulnerability();
 		}
@@ -111,19 +113,5 @@ public final class VulnerabilitiesProducer {
 	
 	private String getInstanceIdString(Component component, Vulnerability vulnerability) {
 		return component.getBomRef() + ":" + vulnerability.getId();
-	}
-	
-	private String getToolName(Bom bom) {
-		String toolName = "Unknown";
-		if ( bom.getMetadata()!=null && ArrayUtils.isNotEmpty(bom.getMetadata().getTools()) ) {
-			BomTool mainTool = bom.getMetadata().getTools()[0];
-			toolName = 
-					StringUtils.defaultIfBlank(mainTool.getVendor()+" ", "") 
-					+ StringUtils.defaultIfBlank(mainTool.getName()+" ", "")
-					+ StringUtils.defaultIfBlank(mainTool.getVersion()+" ", "");
-			// Remove duplicate words, for example if tool name repeats vendor name 
-			toolName = Arrays.stream( toolName.split("\\s+")).distinct().collect(Collectors.joining(" ") );;
-		}
-		return toolName;
 	}
 }

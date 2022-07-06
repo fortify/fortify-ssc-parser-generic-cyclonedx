@@ -25,6 +25,10 @@
 package com.fortify.ssc.parser.cyclonedx.domain;
 
 import java.io.Serializable;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import org.apache.commons.lang3.StringUtils;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fortify.util.mapdb.CustomSerializerElsa;
@@ -46,7 +50,7 @@ public final class Component implements Serializable {
 	@JsonProperty private String description;
 	@JsonProperty private ComponentScope scope;
 	// @JsonProperty private ComponentHash[] hashes;
-	// @JsonProperty private ComponentLicense[] licenses;
+	@JsonProperty private ComponentLicense[] licenses;
 	// @JsonProperty private String copyright;
 	// @JsonProperty private String cpe;
 	@JsonProperty private String purl;
@@ -70,5 +74,16 @@ public final class Component implements Serializable {
 
 	public final String getScopeName() {
 		return scope==null ? "unknown" : scope.toString();
+	}
+
+	public String getLicensesAsString() {
+		String result = "unknown";
+		if ( licenses!=null && licenses.length>0 ) {
+			result = Stream.of(licenses)
+				.map(ComponentLicense::getLicenseIdOrName)
+				.filter(StringUtils::isNotBlank)
+				.collect(Collectors.joining(", "));
+		}
+		return result;
 	}
 }

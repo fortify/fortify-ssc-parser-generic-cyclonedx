@@ -15,9 +15,23 @@
 				{
 					"type": "template",
 					"title": "ID",
-					"key": "customAttributes.vulnId",
+					"key": "customAttributes.issueId",
 					"templateId": "SIMPLE",
 					"dataType": "string"
+				},
+				{
+					"type": "template",
+					"title": "URL",
+					"key": "customAttributes.issueUrl",
+					"templateId": "SIMPLE",
+					"dataType": "string"
+				},
+				{
+					"type": "template",
+					"title": "CWE(s)",
+					"key": "customAttributes.cwes",
+					"templateId": "SIMPLE",
+					"dataType": "string"				
 				},
 				{
 					"type": "template",
@@ -65,6 +79,13 @@
 					"type": "template",
 					"title": "Scope",
 					"key": "customAttributes.componentScope",
+					"templateId": "SIMPLE",
+					"dataType": "string"
+				},
+				{
+					"type": "template",
+					"title": "Licenses",
+					"key": "customAttributes.licenses",
 					"templateId": "SIMPLE",
 					"dataType": "string"
 				},

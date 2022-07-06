@@ -26,9 +26,13 @@ package com.fortify.ssc.parser.cyclonedx.domain;
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
+import java.util.stream.Collectors;
 
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.mapdb.DB;
 import org.mapdb.Serializer;
 
@@ -118,5 +122,19 @@ public final class Bom implements Serializable {
 		@JsonProperty private String version;
 		//@JsonProperty private Hash[] hashes;
 		//@JsonProperty private ExternalReference[] externalReferences;
+	}
+	
+	public final String getToolName() {
+		String toolName = "Unknown";
+		if ( getMetadata()!=null && ArrayUtils.isNotEmpty(getMetadata().getTools()) ) {
+			BomTool mainTool = getMetadata().getTools()[0];
+			toolName = 
+					StringUtils.defaultIfBlank(mainTool.getVendor()+" ", "") 
+					+ StringUtils.defaultIfBlank(mainTool.getName()+" ", "")
+					+ StringUtils.defaultIfBlank(mainTool.getVersion()+" ", "");
+			// Remove duplicate words, for example if tool name repeats vendor name 
+			toolName = Arrays.stream( toolName.split("\\s+")).distinct().collect(Collectors.joining(" ") );;
+		}
+		return toolName;
 	}
 }
