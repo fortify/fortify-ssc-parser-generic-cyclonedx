@@ -53,7 +53,8 @@ class CycloneDXParserPluginTest {
 	private static final String[] SAMPLE_FILES = {
 			"cyclonedx/sample-sbom-with-vulns.json",
 			"cyclonedx/sample-dependencytrack.json",
-			"debricked/sample-debricked.json",
+			"debricked/sample1.json",
+			"debricked/owasp-nodejs-goat-with-vulns.json",
 	};
 	
 	private final ScanData getScanData(String fileName) {
