@@ -56,6 +56,13 @@
 			"items": [
 				{
 					"type": "template",
+					"title": "Package Type",
+					"key": "customAttributes.componentPackageType",
+					"templateId": "SIMPLE",
+					"dataType": "string"
+				},
+				{
+					"type": "template",
 					"title": "Group",
 					"key": "customAttributes.componentGroup",
 					"templateId": "SIMPLE",
