@@ -53,7 +53,7 @@ public final class Component implements Serializable {
 	@JsonProperty private ComponentLicense[] licenses;
 	// @JsonProperty private String copyright;
 	// @JsonProperty private String cpe;
-	@JsonProperty private String purl;
+	@JsonProperty private PackageUrl purl;
 	// @JsonProperty private ComponentSWID swid;
 	// @JsonProperty private ComponentPedigree pedigree;
 	// @JsonProperty private ExternalReference[] externalReferences;
@@ -74,6 +74,26 @@ public final class Component implements Serializable {
 
 	public final String getScopeName() {
 		return scope==null ? "unknown" : scope.toString();
+	}
+	
+	public String getPurlAsString() {
+		return purl==null ? null : purl.getPurl();
+	}
+	
+	public String getPackageType() {
+		return purl==null ? null : purl.getPackageType();
+	}
+	
+	public String getGroup() {
+		return StringUtils.isNotBlank(group) ? group : (purl==null ? null : purl.getGroup());
+	}
+	
+	public String getName() {
+		return StringUtils.isNotBlank(name) ? name : (purl==null ? null : purl.getName());
+	}
+	
+	public String getVersion() {
+		return StringUtils.isNotBlank(version) ? version : (purl==null ? null : purl.getVersion());
 	}
 
 	public String getLicensesAsString() {

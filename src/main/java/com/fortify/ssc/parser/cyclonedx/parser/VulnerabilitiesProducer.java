@@ -60,7 +60,7 @@ public final class VulnerabilitiesProducer {
 			vb.setLikelihood(2.5f);
 			
 			// Set standard vulnerability fields based on input
-			vb.setFileName(component.getPurl());
+			vb.setFileName(component.getPurlAsString());
 			vb.setPriority(priority);
 			//vb.setRuleGuid(getRuleGuid(runData, result));
 			vb.setVulnerabilityAbstract(vulnerability.getDescription());
@@ -95,12 +95,13 @@ public final class VulnerabilitiesProducer {
 			
 			vb.setStringCustomAttributeValue(CustomVulnAttribute.toolName, bom.getToolName());
 			
+			vb.setStringCustomAttributeValue(CustomVulnAttribute.componentPackageType, component.getPackageType());
 			vb.setStringCustomAttributeValue(CustomVulnAttribute.componentGroup, component.getGroup());
 			vb.setStringCustomAttributeValue(CustomVulnAttribute.componentName, component.getName());
 			vb.setStringCustomAttributeValue(CustomVulnAttribute.componentVersion, component.getVersion());
 			vb.setStringCustomAttributeValue(CustomVulnAttribute.componentScope, component.getScopeName());
 			vb.setStringCustomAttributeValue(CustomVulnAttribute.componentDescription, component.getDescription());
-			vb.setStringCustomAttributeValue(CustomVulnAttribute.componentPurl, component.getPurl());
+			vb.setStringCustomAttributeValue(CustomVulnAttribute.componentPurl, component.getPurlAsString());
 			vb.setStringCustomAttributeValue(CustomVulnAttribute.componentLicenses, component.getLicensesAsString());
     		
     		vb.completeVulnerability();
