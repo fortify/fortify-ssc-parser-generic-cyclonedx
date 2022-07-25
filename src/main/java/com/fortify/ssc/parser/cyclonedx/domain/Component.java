@@ -50,7 +50,7 @@ public final class Component implements Serializable {
 	@JsonProperty private String description;
 	@JsonProperty private ComponentScope scope;
 	// @JsonProperty private ComponentHash[] hashes;
-	@JsonProperty private ComponentLicense[] licenses;
+	@JsonProperty private ComponentLicenseEntry[] licenses;
 	// @JsonProperty private String copyright;
 	// @JsonProperty private String cpe;
 	@JsonProperty private PackageUrl purl;
@@ -100,7 +100,7 @@ public final class Component implements Serializable {
 		String result = "unknown";
 		if ( licenses!=null && licenses.length>0 ) {
 			result = Stream.of(licenses)
-				.map(ComponentLicense::getLicenseIdOrName)
+				.map(ComponentLicenseEntry::getLicenseIdOrName)
 				.filter(StringUtils::isNotBlank)
 				.collect(Collectors.joining(", "));
 		}
