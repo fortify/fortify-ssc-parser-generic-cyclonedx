@@ -35,6 +35,7 @@ This Fortify SSC parser plugin allows for importing [Debricked](https://debricke
 * **Sample input files**: [sampleData](sampleData)
 * **GitHub**: https://github.com/fortify-ps/fortify-ssc-parser-cyclonedx
 * **Automated builds**: https://github.com/fortify-ps/fortify-ssc-parser-cyclonedx/actions
+* **Debricked website**: https://debricked.com/
 * **CycloneDX website**: https://cyclonedx.org/
 
 ## Plugin Installation
