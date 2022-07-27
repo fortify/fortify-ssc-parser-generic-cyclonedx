@@ -92,7 +92,7 @@
 				{
 					"type": "template",
 					"title": "Licenses",
-					"key": "customAttributes.licenses",
+					"key": "customAttributes.componentLicenses",
 					"templateId": "SIMPLE",
 					"dataType": "string"
 				},
