@@ -1,7 +1,7 @@
 plugins {
-  id "io.freefair.lombok" version "6.4.3"
-  id 'com.github.jk1.dependency-license-report' version '2.1'
-  id "org.kordamp.gradle.markdown" version "2.2.0"
+  id "io.freefair.lombok" version "6.4.3" apply false
+  id 'com.github.jk1.dependency-license-report' version '2.1' apply false
+  id "org.kordamp.gradle.markdown" version "2.2.0" apply false
 }
 
 group 'com.fortify.ssc.parser.cyclonedx'
@@ -10,28 +10,16 @@ ext.getVersion = {
 	return !result || result=='unspecified' ? new Date().format('0.yyyyMMdd.HHmmss') : result;
 }
 version = ext.getVersion();
-ext.sscParserPluginVersion = project.version
 
-ext {
-	gradleHelpersLocation = "https://raw.githubusercontent.com/fortify-ps/gradle-helpers/1.7"
-	debrickedBaseName = "fortify-ssc-parser-debricked"
-}
-
-apply from: "${gradleHelpersLocation}/repo-helper.gradle"
-apply from: "${gradleHelpersLocation}/junit-helper.gradle"
-apply from: "${gradleHelpersLocation}/ssc-parser-plugin-helper.gradle"
-apply from: "${gradleHelpersLocation}/thirdparty-helper.gradle"
-apply from: "${gradleHelpersLocation}/readme2html.gradle"
-
-apply plugin: 'java'
-sourceCompatibility = 1.8
-
-sourceSets {
-    test {
-        resources {
-            srcDir "sampleData"
-        }
-    }
+subprojects {
+	apply plugin: 'java'
+	apply plugin: 'io.freefair.lombok'
+	version = rootProject.version;
+	sourceCompatibility = 1.8
+	ext {
+		gradleHelpersLocation = "https://raw.githubusercontent.com/fortify-ps/gradle-helpers/1.7"
+	}
+	apply from: "${gradleHelpersLocation}/repo-helper.gradle"
 }
 
 configurations.all {
@@ -39,71 +27,66 @@ configurations.all {
 	resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
 }
 
-dependencies {
-	implementationExport(group: 'org.mapdb', name: 'mapdb', version: '3.0.8') { transitive = true }
-    implementationExport(group: 'com.fortify.ssc.parser.util', name: 'fortify-ssc-parser-util-json', version:'1.6.1.RELEASE', changing: false) { transitive = true }
-    testImplementation("org.junit.jupiter:junit-jupiter-params:5.8.2")
-}
-
-jar {
-	exclude 'plugin-debricked.xml'
-	exclude 'images/debricked-*.png'
-	baseName = "${rootProject.name}"
-}
-
-task debrickedJar(type: Jar) {
-    from sourceSets.main.output
-    // replace version placeholders in plugin.xml
-    filesMatching('plugin-debricked.xml') {
-        filter {
-            it.replaceAll('<!--VERSION-->.*?<!--/VERSION-->', sscParserPluginVersion)
-        }
-    }
-    from {
-		configurations.implementationExport.collect { 
-    		it.isDirectory() ? it : zipTree(it).matching { 
-    			exclude 'META-INF/*' 
-    			exclude 'module-info.class' // Avoid duplicate entries from recent Jackson libraries 
-    		} 
-    	} 
-    }
-    duplicatesStrategy = 'exclude'
-    exclude 'plugin.xml'
-    exclude 'images/cyclonedx-*.png'
-	rename("plugin-debricked.xml", "plugin.xml")
-    baseName = "${debrickedBaseName}"
-}
-
-assemble.dependsOn(debrickedJar)
-
-task distCycloneDX(type: Zip) {
-	dependsOn 'build', 'readme2html'
-	archiveFileName = "${rootProject.name}-${project.version}.zip"
-	destinationDirectory = file("$buildDir/dist")
-	from("${buildDir}/${libsDirName}") {
-		include "${rootProject.name}-${project.version}.jar"
+configure(subprojects.findAll {it.name=='fortify-ssc-parser-cyclonedx-common'}) {
+	apply plugin: 'com.github.jk1.dependency-license-report'
+	apply from: "${gradleHelpersLocation}/junit-helper.gradle"
+	apply from: "${gradleHelpersLocation}/thirdparty-helper.gradle"
+	dependencies {
+		compileOnly 'com.fortify.plugin:plugin-api'
+		compileOnly 'org.slf4j:slf4j-api'
+		implementation(group: 'org.mapdb', name: 'mapdb', version: '3.0.8') { transitive = true }
+		implementation(group: 'com.fortify.ssc.parser.util', name: 'fortify-ssc-parser-util-json', version:'1.6.3.RELEASE', changing: false) { transitive = true }
+		testImplementation("org.junit.jupiter:junit-jupiter-params:5.8.2")
 	}
-	from "${buildDir}/html"
-	from("${projectDir}") {
-		include "sampleData/cyclonedx/*"
-		include "LICENSE.TXT"
+	sourceSets {
+		test {
+			resources {
+				srcDir "${rootProject.projectDir}/sampleData"
+			}
+		}
 	}
+	task copyThirdParty(type: Copy) {
+		from("${buildDir}/dist") {
+			include "*-thirdparty.zip"
+		}
+		into "${rootProject.buildDir}/dist"
+		rename 'fortify-ssc-parser-cyclonedx-(.*)-thirdparty.zip', 'thirdparty-$1.zip'
+	}
+	distThirdParty.finalizedBy copyThirdParty
 }
 
-task distDebricked(type: Zip) {
-	dependsOn 'build', 'readme2html'
-	archiveFileName = "${debrickedBaseName}-${project.version}.zip"
-	destinationDirectory = file("$buildDir/dist")
-	from("${buildDir}/${libsDirName}") {
-		include "${debrickedBaseName}-${project.version}.jar"
+configure(subprojects.findAll {it.name!='fortify-ssc-parser-cyclonedx-common'}) {
+	apply plugin: 'org.kordamp.gradle.markdown'
+	ext.sscParserPluginVersion = project.version
+	apply from: "${gradleHelpersLocation}/ssc-parser-plugin-helper.gradle"
+	apply from: "${gradleHelpersLocation}/readme2html.gradle"
+	dependencies {
+		implementationExport(project(':fortify-ssc-parser-cyclonedx-common')) {
+			// Make sure that we don't bundle Fortify plugin API and SLF4J in the plugin jar
+			exclude group: 'com.fortify.plugin' 
+			exclude group: 'org.slf4j'
+		}
 	}
-	from "${buildDir}/html"
-	from("${projectDir}") {
-		include "sampleData/debricked/*"
-		include "LICENSE.TXT"
+	task dist(type: Zip) {
+		dependsOn 'build', 'readme2html'
+		archiveFileName = "${project.name}-${project.version}.zip"
+		destinationDirectory = file("${rootProject.buildDir}/dist")
+		from("${buildDir}/${libsDirName}") {
+			include "${project.name}-${project.version}.jar"
+		}
+		from("${rootProject.projectDir}/sampleData/${parserType}") {
+			into "sampleData"
+		}
+		from "${buildDir}/html"
+		from("${rootProject.projectDir}") {
+			include "LICENSE.TXT"
+		}
+		
 	}
 }
 
-task dist {
-	dependsOn 'distCycloneDX', 'distDebricked'
+// For some reason Gradle doesn't clean the root project, so we define a clean task here
+task clean(type: Delete) {
+	delete "${buildDir}"
+	followSymlinks = true
 }

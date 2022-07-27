@@ -1,1 +1,6 @@
 rootProject.name = 'fortify-ssc-parser-cyclonedx'
+include 'fortify-ssc-parser-cyclonedx-common'
+include 'fortify-ssc-parser-cyclonedx'
+include 'fortify-ssc-parser-debricked'
+include 'fortify-ssc-22.2+-parser-cyclonedx'
+include 'fortify-ssc-22.2+-parser-debricked'
