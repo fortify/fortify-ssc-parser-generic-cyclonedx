@@ -1,1 +1,1 @@
-Please see [Debricked sampleData](../sampleData/debricked) in the main project directory.
+Please see [Debricked sampleData](../../sampleData/debricked) in the main project directory.
