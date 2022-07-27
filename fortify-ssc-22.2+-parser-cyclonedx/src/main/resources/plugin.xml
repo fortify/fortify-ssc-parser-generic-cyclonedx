@@ -3,11 +3,11 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PluginDescriptor"
         id="com.fortify.ssc.parser.cyclonedx.debricked" api-version="1.1">
     <plugin-info>
-        <name>CycloneDX parser plugin</name>
+        <name>CycloneDX parser plugin for SSC 22.2+</name>
         <version><!--VERSION-->0.0<!--/VERSION--></version>
         <data-version>1</data-version>
         <vendor name="Micro Focus" url="https://www.microfocus.com"/>
-        <description>CycloneDX parser plugin</description>
+        <description>CycloneDX parser plugin  (results shown on SSC Audit and Open Source pages)</description>
         <resources>
             <localization>
                 <language id="default" location="/resources/cyclonedx_en.properties"/>

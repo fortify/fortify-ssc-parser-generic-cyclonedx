@@ -7,7 +7,7 @@
         <version><!--VERSION-->0.0<!--/VERSION--></version>
         <data-version>1</data-version>
         <vendor name="Micro Focus" url="https://www.microfocus.com"/>
-        <description>Parser plugin for Debricked vulnerability data in CycloneDX format</description>
+        <description>Parser plugin for Debricked vulnerability data in CycloneDX format (results shown on SSC Audit page only)</description>
         <resources>
             <localization>
                 <language id="default" location="/resources/cyclonedx_en.properties"/>

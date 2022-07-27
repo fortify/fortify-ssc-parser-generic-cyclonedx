@@ -7,7 +7,7 @@
         <version><!--VERSION-->0.0<!--/VERSION--></version>
         <data-version>1</data-version>
         <vendor name="Micro Focus" url="https://www.microfocus.com"/>
-        <description>CycloneDX parser plugin</description>
+        <description>CycloneDX parser plugin (results shown on SSC Audit page only)</description>
         <resources>
             <localization>
                 <language id="default" location="/resources/cyclonedx_en.properties"/>
