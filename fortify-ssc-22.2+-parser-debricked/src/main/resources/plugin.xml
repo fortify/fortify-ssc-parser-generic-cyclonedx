@@ -25,7 +25,7 @@
         <view-template location="/viewtemplate/ViewTemplate.json">
             <description>Default CycloneDX vulnerability view template.</description>
         </view-template>
-        <parser-type>OPENSOURCE</parser-type>
+        <parser-type>DEPENDENCY_SCAN</parser-type>
     </issue-parser>
 </plugin>
 
