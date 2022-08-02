@@ -32,8 +32,8 @@ package com.fortify.ssc.parser.cyclonedx;
  *
  */
 public enum CustomVulnAttribute implements com.fortify.plugin.spi.VulnerabilityAttribute {
-	issueId(AttrType.STRING),
-	issueUrl(AttrType.STRING),
+	externalId(AttrType.STRING),
+	externalUrl(AttrType.STRING),
 	cwes(AttrType.STRING),
 	invoked(AttrType.STRING),
 	controllable(AttrType.STRING),

@@ -15,14 +15,14 @@
 				{
 					"type": "template",
 					"title": "ID",
-					"key": "customAttributes.issueId",
+					"key": "customAttributes.externalId",
 					"templateId": "SIMPLE",
 					"dataType": "string"
 				},
 				{
 					"type": "template",
 					"title": "URL",
-					"key": "customAttributes.issueUrl",
+					"key": "customAttributes.externalUrl",
 					"templateId": "SIMPLE",
 					"dataType": "string"
 				},

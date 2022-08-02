@@ -84,8 +84,8 @@ public final class VulnerabilitiesProducer {
 			
 			//vb.set*CustomAttributeValue(...)
 			
-			vb.setStringCustomAttributeValue(CustomVulnAttribute.issueId, vulnerability.getId());
-			vb.setStringCustomAttributeValue(CustomVulnAttribute.issueUrl, vulnerability.getIssueUrl(bom));
+			vb.setStringCustomAttributeValue(CustomVulnAttribute.externalId, vulnerability.getId());
+			vb.setStringCustomAttributeValue(CustomVulnAttribute.externalUrl, vulnerability.getIssueUrl(bom));
 			vb.setStringCustomAttributeValue(CustomVulnAttribute.cwes, vulnerability.getCwesAsString());
 			vb.setStringCustomAttributeValue(CustomVulnAttribute.invoked, vulnerability.getInvokedAsString());
 			vb.setStringCustomAttributeValue(CustomVulnAttribute.controllable, vulnerability.getControllableAsString());
