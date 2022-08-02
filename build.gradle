@@ -46,6 +46,9 @@ configure(subprojects.findAll {it.name=='fortify-ssc-parser-cyclonedx-common'}) 
 			}
 		}
 	}
+	task dist {
+		dependsOn 'build'
+	}
 	task copyThirdParty(type: Copy) {
 		from("${buildDir}/dist") {
 			include "*-thirdparty.zip"
