@@ -37,6 +37,7 @@ configure(subprojects.findAll {it.name=='fortify-ssc-parser-cyclonedx-common'}) 
 		implementation(group: 'org.mapdb', name: 'mapdb', version: '3.0.8') { transitive = true }
 		implementation(group: 'com.fortify.ssc.parser.util', name: 'fortify-ssc-parser-util-json', version:'1.6.3.RELEASE', changing: false) { transitive = true }
 		testImplementation("org.junit.jupiter:junit-jupiter-params:5.8.2")
+		testImplementation 'com.fortify.plugin:plugin-api'
 	}
 	sourceSets {
 		test {
