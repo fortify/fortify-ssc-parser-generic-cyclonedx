@@ -42,7 +42,7 @@ public enum CustomVulnAttribute implements com.fortify.plugin.spi.VulnerabilityA
 	recommendation(AttrType.LONG_STRING),
 	toolName(AttrType.STRING),
 	componentPackageType(AttrType.STRING),
-	componentGroup(AttrType.STRING),
+	componentNamespace(AttrType.STRING),
 	componentName(AttrType.STRING),
 	componentVersion(AttrType.STRING),
 	componentScope(AttrType.STRING),

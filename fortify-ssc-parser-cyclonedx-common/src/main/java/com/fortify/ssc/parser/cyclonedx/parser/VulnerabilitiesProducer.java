@@ -96,7 +96,7 @@ public final class VulnerabilitiesProducer {
 			vb.setStringCustomAttributeValue(CustomVulnAttribute.toolName, bom.getToolName());
 			
 			vb.setStringCustomAttributeValue(CustomVulnAttribute.componentPackageType, component.getPackageType());
-			vb.setStringCustomAttributeValue(CustomVulnAttribute.componentGroup, component.getGroup());
+			vb.setStringCustomAttributeValue(CustomVulnAttribute.componentNamespace, component.getGroup());
 			vb.setStringCustomAttributeValue(CustomVulnAttribute.componentName, component.getName());
 			vb.setStringCustomAttributeValue(CustomVulnAttribute.componentVersion, component.getVersion());
 			vb.setStringCustomAttributeValue(CustomVulnAttribute.componentScope, component.getScopeName());

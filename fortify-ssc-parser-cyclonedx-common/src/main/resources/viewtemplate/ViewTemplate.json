@@ -64,7 +64,7 @@
 				{
 					"type": "template",
 					"title": "Group",
-					"key": "customAttributes.componentGroup",
+					"key": "customAttributes.componentNamespace",
 					"templateId": "SIMPLE",
 					"dataType": "string"
 				},
