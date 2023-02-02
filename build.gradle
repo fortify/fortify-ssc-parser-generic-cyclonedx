@@ -52,7 +52,7 @@ subprojects {
 		from("${buildDir}/${libsDirName}") {
 			include "${project.name}-${project.version}.jar"
 		}
-		from("${rootProject.projectDir}/sampleData/${parserType}") {
+		from("${rootProject.projectDir}/sampleData") {
 			into "sampleData"
 		}
 		from "${m2hOutputDir}"
