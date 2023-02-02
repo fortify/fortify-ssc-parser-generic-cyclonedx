@@ -25,7 +25,7 @@ subprojects {
 	sourceCompatibility = 1.8
 	ext {
 		gradleHelpersLocation = "https://raw.githubusercontent.com/fortify-ps/gradle-helpers/1.8"
-		thirdPartyBaseName = "${project.name}"
+		thirdPartyBaseName = "${project.name}-${project.version}"
 	}
 	apply from: "${gradleHelpersLocation}/repo-helper.gradle"
 	ext.sscParserPluginVersion = project.version
