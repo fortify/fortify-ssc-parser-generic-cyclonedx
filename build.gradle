@@ -20,15 +20,18 @@ subprojects {
 	apply plugin: 'java'
 	apply plugin: 'io.freefair.lombok'
 	apply plugin: 'org.kordamp.gradle.markdown'
+	apply plugin: 'com.github.jk1.dependency-license-report'
 	version = rootProject.version;
 	sourceCompatibility = 1.8
 	ext {
 		gradleHelpersLocation = "https://raw.githubusercontent.com/fortify-ps/gradle-helpers/1.8"
+		thirdPartyBaseName = "${project.name}"
 	}
 	apply from: "${gradleHelpersLocation}/repo-helper.gradle"
 	ext.sscParserPluginVersion = project.version
 	apply from: "${gradleHelpersLocation}/ssc-parser-plugin-helper.gradle"
 	apply from: "${gradleHelpersLocation}/markdown2html.gradle"
+	apply from: "${gradleHelpersLocation}/thirdparty-helper.gradle"
 	dependencies {
 		implementationExport('com.fortify.ssc.parser.util:fortify-ssc-parser-util-cyclonedx:1.7.0.RELEASE') {
 			// Make sure that we don't bundle Fortify plugin API and SLF4J in the plugin jar
@@ -56,8 +59,15 @@ subprojects {
 		from("${rootProject.projectDir}") {
 			include "LICENSE.txt"
 		}
-		
 	}
+	
+	task copyThirdParty(type: Copy) {
+		from("${buildDir}/dist") {
+			include "*-thirdparty.zip"
+		}
+		into "${rootProject.buildDir}/dist"
+	}
+	distThirdParty.finalizedBy copyThirdParty
 }
 
 // For some reason Gradle doesn't clean the root project, so we define a clean task here
