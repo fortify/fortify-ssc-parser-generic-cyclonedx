@@ -43,6 +43,7 @@ Given the limitations listed below, please check whether there is any more appro
 
 <!-- START-INCLUDE:repo-resources.md -->
 
+* **Usage**: [USAGE.md](USAGE.md)
 * **Releases**: https://github.com/fortify/fortify-ssc-parser-generic-cyclonedx/releases
     * _Development releases may be unstable or non-functional. The `*-thirdparty.zip` file is for informational purposes only and does not need to be downloaded._
 * **Sample input files**: [sampleData](sampleData)
