@@ -4,75 +4,46 @@ plugins {
   id "org.kordamp.gradle.markdown" version "2.2.0" apply false
 }
 
-group 'com.fortify.ssc.parser.cyclonedx'
+group 'com.fortify.ssc.parser.generic.cyclonedx'
 ext.getVersion = {
 	def result = project.findProperty('version');
 	return !result || result=='unspecified' ? new Date().format('0.yyyyMMdd.HHmmss') : result;
 }
 version = ext.getVersion();
 
+configurations.all {
+    // Don't cache modules that may change (i.e. snapshots)
+        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
 subprojects {
 	apply plugin: 'java'
 	apply plugin: 'io.freefair.lombok'
+	apply plugin: 'org.kordamp.gradle.markdown'
 	version = rootProject.version;
 	sourceCompatibility = 1.8
 	ext {
-		gradleHelpersLocation = "https://raw.githubusercontent.com/fortify-ps/gradle-helpers/1.7"
+		gradleHelpersLocation = "https://raw.githubusercontent.com/fortify-ps/gradle-helpers/1.8"
 	}
 	apply from: "${gradleHelpersLocation}/repo-helper.gradle"
-}
-
-configurations.all {
-    // Don't cache modules that may change (i.e. snapshots)
-	resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
-}
-
-configure(subprojects.findAll {it.name=='fortify-ssc-parser-cyclonedx-common'}) {
-	apply plugin: 'com.github.jk1.dependency-license-report'
-	apply from: "${gradleHelpersLocation}/junit-helper.gradle"
-	apply from: "${gradleHelpersLocation}/thirdparty-helper.gradle"
-	dependencies {
-		compileOnly 'com.fortify.plugin:plugin-api'
-		compileOnly 'org.slf4j:slf4j-api'
-		implementation(group: 'org.mapdb', name: 'mapdb', version: '3.0.8') { transitive = true }
-		implementation(group: 'com.fortify.ssc.parser.util', name: 'fortify-ssc-parser-util-json', version:'1.6.3.RELEASE', changing: false) { transitive = true }
-		testImplementation("org.junit.jupiter:junit-jupiter-params:5.8.2")
-		testImplementation 'com.fortify.plugin:plugin-api'
-	}
-	sourceSets {
-		test {
-			resources {
-				srcDir "${rootProject.projectDir}/sampleData"
-			}
-		}
-	}
-	task dist {
-		dependsOn 'build'
-	}
-	task copyThirdParty(type: Copy) {
-		from("${buildDir}/dist") {
-			include "*-thirdparty.zip"
-		}
-		into "${rootProject.buildDir}/dist"
-		rename 'fortify-ssc-parser-cyclonedx-(.*)-thirdparty.zip', 'thirdparty-$1.zip'
-	}
-	distThirdParty.finalizedBy copyThirdParty
-}
-
-configure(subprojects.findAll {it.name!='fortify-ssc-parser-cyclonedx-common'}) {
-	apply plugin: 'org.kordamp.gradle.markdown'
 	ext.sscParserPluginVersion = project.version
 	apply from: "${gradleHelpersLocation}/ssc-parser-plugin-helper.gradle"
-	apply from: "${gradleHelpersLocation}/readme2html.gradle"
+	apply from: "${gradleHelpersLocation}/markdown2html.gradle"
 	dependencies {
-		implementationExport(project(':fortify-ssc-parser-cyclonedx-common')) {
+		implementationExport('com.fortify.ssc.parser.util:fortify-ssc-parser-util-cyclonedx:1.7.0.RELEASE') {
 			// Make sure that we don't bundle Fortify plugin API and SLF4J in the plugin jar
 			exclude group: 'com.fortify.plugin' 
 			exclude group: 'org.slf4j'
 		}
 	}
+	task copyMarkdown(type: Copy) {
+		from("${rootProject.projectDir}") {
+			include "USAGE.md"
+		}
+		into "${m2hSourceDir}"
+	 }
 	task dist(type: Zip) {
-		dependsOn 'build', 'readme2html'
+		dependsOn 'build', 'markdownToHtml'
 		archiveFileName = "${project.name}-${project.version}.zip"
 		destinationDirectory = file("${rootProject.buildDir}/dist")
 		from("${buildDir}/${libsDirName}") {
@@ -81,9 +52,9 @@ configure(subprojects.findAll {it.name!='fortify-ssc-parser-cyclonedx-common'}) 
 		from("${rootProject.projectDir}/sampleData/${parserType}") {
 			into "sampleData"
 		}
-		from "${buildDir}/html"
+		from "${m2hOutputDir}"
 		from("${rootProject.projectDir}") {
-			include "LICENSE.TXT"
+			include "LICENSE.txt"
 		}
 		
 	}
