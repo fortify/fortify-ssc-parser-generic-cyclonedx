@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://www.github.com/fortify/fortify-ssc-parser-generic-cyclonedx/compare/v1.2.0...v1.3.0) (2025-01-21)
+
+
+### Features
+
+* Display vulnerability rating on SSC Audit page ([#8](https://www.github.com/fortify/fortify-ssc-parser-generic-cyclonedx/issues/8)) ([e45550f](https://www.github.com/fortify/fortify-ssc-parser-generic-cyclonedx/commit/e45550fe1595e6630c184f40e46be61e230ee93e))
+
 ## [1.2.0](https://www.github.com/fortify/fortify-ssc-parser-generic-cyclonedx/compare/v1.1.1...v1.2.0) (2023-09-15)
 
 
