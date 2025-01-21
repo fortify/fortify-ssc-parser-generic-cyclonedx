@@ -1,3 +1,11 @@
+buildscript {
+    configurations.all {
+        resolutionStrategy.dependencySubstitution {
+            substitute module("com.overzealous:remark:1.1.0") using module("com.wavefront:remark:2023-07.07") because "not available on maven central anymore"
+        }
+    }
+}
+
 plugins {
   id "io.freefair.lombok" version "8.3" apply false
   id 'com.github.jk1.dependency-license-report' version '2.5' apply false
@@ -33,7 +41,7 @@ subprojects {
 	apply from: "${gradleHelpersLocation}/markdown2html.gradle"
 	apply from: "${gradleHelpersLocation}/thirdparty-helper.gradle"
 	dependencies {
-		implementationExport('com.fortify.ssc.parser.util:fortify-ssc-parser-util-cyclonedx:2.0.0.RELEASE') {
+		implementationExport('com.fortify.ssc.parser.util:fortify-ssc-parser-util-cyclonedx:2.1.0.RELEASE') {
 			// Make sure that we don't bundle Fortify plugin API and SLF4J in the plugin jar
 			exclude group: 'com.fortify.plugin' 
 			exclude group: 'org.slf4j'
