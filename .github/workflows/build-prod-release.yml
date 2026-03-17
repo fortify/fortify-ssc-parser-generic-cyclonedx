@@ -15,16 +15,16 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      issues: write
     steps:
       - name: Check-out source code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Generate and process release PR
         id: release_please
-        uses: GoogleCloudPlatform/release-please-action@v2
+        uses: googleapis/release-please-action@v4
         with:
           release-type: simple
-          package-name: ${{ github.event.repository.name }}
 
       - name: Define production release info
         if: steps.release_please.outputs.release_created
@@ -50,3 +50,4 @@ jobs:
           gh release upload "${tag}" ${files} --clobber
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
