@@ -11,7 +11,7 @@ permissions: read-all
 
 jobs:
   fortify:
-    uses: fortify/.github/.github/workflows/fortify-analysis.yml@main
+    uses: fortify/shared-github/.github/workflows/reusable-fortify-analysis.yml@5ad1afec0f56a21b03f0887eea35505cb6a66554
     permissions:
       actions: read
       contents: read
