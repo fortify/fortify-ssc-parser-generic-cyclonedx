@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2](https://github.com/fortify/fortify-ssc-parser-generic-cyclonedx/compare/v1.3.1...v1.3.2) (2026-09-22)
+
+
+### Bug Fixes
+
+* Upgrade dependency versions ([b3640d2](https://github.com/fortify/fortify-ssc-parser-generic-cyclonedx/commit/b3640d27877bc60de1d2f1a3767f187ece4ea2cd))
+
 ## [1.3.1](https://github.com/fortify/fortify-ssc-parser-generic-cyclonedx/compare/v1.3.0...v1.3.1) (2026-03-17)
 
 
